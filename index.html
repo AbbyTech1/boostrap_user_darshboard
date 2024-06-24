@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="custom.css">
+    <script
+      src="https://kit.fontawesome.com/6a3fdcd9e5.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container-fluid p-0 d-flex h-100">
+      <div
+        id="bdSidebar"
+        class="d-flex flex-column flex-shrink-0 p-3 bg-dark text-white offcanvas-md offcanvas-start vh-100%"
+        style="width: 280px"
+      >
+        <a
+          href="/"
+          class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+        >
+          <svg class="bi me-2" width="40" height="32">
+            <use xlink:href="#bootstrap" />
+          </svg>
+          <span class="fs-4">Admin</span>
+        </a>
+        <hr />
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link active" aria-current="page">
+              <svg class="bi me-2" width="16" height="16">
+                <use xlink:href="#home" />
+              </svg>
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              Dashboard
+            </a>
+          </li>
+          <div class=" mx-5 my-3">
+          <li>
+            <a href="#submenu1" class="list-group-item list-group-item-action text-light" data-toggle="collapse" aria-expanded="false"><i class="fas fa-paper-plane"></i>
+              Transfer</a>
+            <div class="collapse" id="submenu1">
+                <a href="withdrawal.html" class="list-group-item list-group-item-action text-light mx-3"><i class="fas fa-exchange-alt" style="color: #fcfcfc;"></i> New Transfer</a>
+                <a href="/history.html#history" class="list-group-item list-group-item-action text-light mx-3"><i class="fas fa-history" style="color: #ffffff;"></i> History</a>
+            </div>
+          </li>
+          <li>
+            <a href="#submenu2" class="list-group-item list-group-item-action text-light mt-4" data-toggle="collapse" aria-expanded="false"><i class="fas fa-money-bill" style="color: #ffffff;"></i>
+              Withdraw</a>
+            <div class="collapse" id="submenu2">
+                <a href="wallet.html" class="list-group-item list-group-item-action text-light mx-3"><i class="fas fa-exchange-alt" style="color: #fcfcfc;"></i> New Withdraw</a>
+                <a href="/history.html#history" class="list-group-item list-group-item-action text-light mx-3"><i class="fas fa-history" style="color: #ffffff;"></i> History</a>
+            </div>
+          </li>
+        </div>
+          <li>
+            <a href="#" class="nav-link text-white">
+              <svg class="bi me-2" width="16" height="16">
+                <use xlink:href="#grid" />
+              </svg>
+              <i class="fa-solid fa-headset" style="color: #ffffff;"></i>
+              Live Chart
+            </a>
+          </li>
+        </ul>
+        <hr />
+        <div class="dropdown">
+          <a
+            href="#"
+            class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+            id="dropdownUser1"
+            data-bs-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <img
+              src="https://github.com/mdo.png"
+              alt=""
+              width="32"
+              height="32"
+              class="rounded-circle me-2"
+            />
+            <strong>Profile</strong>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="account.html">New Account</a></li>
+            <li><a class="dropdown-item" href="settings.html">Settings</a></li>
+            <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-wrapper flex-fill" style=" overflow-y: auto; height: 100vh;">
+        <div class="p-0 d-flex justify-content-between text-white bg-success">
+          <a href="#" class="text-white p-3" data-bs-toggle="offcanvas" data-bs-target="#bdSidebar">
+            <i class="fa-solid fa-bars"></i>
+          </a>
+          <!-- Navbar -->
+          <nav class="main-header navbar navbar-expand navbar-white navbar-light flex-grow-1">
+            <div class="d-flex justify-content-between w-100">
+              <!-- Left navbar links -->
+              <ul class="navbar-nav">
+                <li class="nav-item d-none d-sm-inline-block">
+                  <a href="index.html" class="nav-link">Home</a>
+                </li>
+              </ul>
+      
+              <!-- Right navbar links -->
+              <ul class="navbar-nav d-flex align-items-center">
+                <!-- Notifications Dropdown Menu -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link" data-toggle="dropdown" href="#">
+                    <i class="far fa-bell"></i>
+                    <span class="badge badge-warning navbar-badge">15</span>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    <span class="dropdown-item dropdown-header">15 Notifications</span>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">
+                      <i class="fas fa-envelope mr-2"></i> 4 new messages
+                      <span class="float-right text-muted text-sm">3 mins</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">
+                      <i class="fas fa-users mr-2"></i> 8 friend requests
+                      <span class="float-right text-muted text-sm">12 hours</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">
+                      <i class="fas fa-file mr-2"></i> 3 new reports
+                      <span class="float-right text-muted text-sm">2 days</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                    <i class="fas fa-expand-arrows-alt"></i>
+                  </a>
+                </li>
+                <div class="dropdown">
+                  <a href="#" class="d-block" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://via.placeholder.com/40" alt="Profile Image" class="rounded-circle">
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="account.html">New Account</a></li>
+                    <li><a class="dropdown-item" href="settings.html">Settings</a></li>
+                    <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                  </ul>
+                </div>
+              </ul>
+            </div>
+          </nav>
+          <!-- /.navbar -->
+        </div>
+
+        <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+  {
+  "symbols": [
+    {
+      "proName": "FOREXCOM:SPXUSD",
+      "title": "S&P 500 Index"
+    },
+    {
+      "proName": "FOREXCOM:NSXUSD",
+      "title": "US 100 Cash CFD"
+    },
+    {
+      "proName": "FX_IDC:EURUSD",
+      "title": "EUR to USD"
+    },
+    {
+      "proName": "BITSTAMP:BTCUSD",
+      "title": "Bitcoin"
+    },
+    {
+      "proName": "BITSTAMP:ETHUSD",
+      "title": "Ethereum"
+    }
+  ],
+  "showSymbolLogo": true,
+  "isTransparent": true,
+  "displayMode": "adaptive",
+  "colorTheme": "light",
+  "locale": "en"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+
+        <div class="container-fluid mt-3">
+          <div class="d-flex justify-content-between">
+          <h1>Dashboard</h1>
+          <p class="m-1">Home</p>       
+        </div>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid text-white">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="row justify-content-center">
+              <div class="col-lg-3 col-6 mb-4">
+                <!-- small box -->
+                <div class="small-box bg-info d-flex flex-column align-items-center justify-content-center text-center p-3">
+                  <div class="inner">
+                    <h3>150</h3>
+                    <p>New Orders</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-bag"></i>
+                  </div>
+                  <a href="#" class="small-box-footer text-white mt-auto">More info <i class="fas fa-arrow-circle-right text-white"></i></a>
+                </div>
+              </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6 mb-4">
+            <!-- small box -->
+            <div class="small-box bg-success d-flex flex-column align-items-center justify-content-center text-center p-3">
+              <div class="inner">
+                <h3>150</h3>
+                <p>New Orders</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-bag"></i>
+              </div>
+              <a href="#" class="small-box-footer text-white mt-auto">More info <i class="fas fa-arrow-circle-right text-white"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6 mb-4">
+            <!-- small box -->
+            <div class="small-box bg-warning d-flex flex-column align-items-center justify-content-center text-center p-3">
+              <div class="inner">
+                <h3>150</h3>
+                <p>New Orders</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-bag"></i>
+              </div>
+              <a href="#" class="small-box-footer text-white mt-auto">More info <i class="fas fa-arrow-circle-right text-white"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6 mb-4">
+            <!-- small box -->
+            <div class="small-box bg-danger d-flex flex-column align-items-center justify-content-center text-center p-3">
+              <div class="inner">
+                <h3>150</h3>
+                <p>New Orders</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-bag"></i>
+              </div>
+              <a href="#" class="small-box-footer text-white mt-auto  rounded ">More info <i class="fas fa-arrow-circle-right text-white"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+        </div>
+        <!-- /.row -->
+       
+    </section>
+    <!-- /.content -->
+
+          <div class=" row">
+            <div class=" col-md-6 m-auto  me-1 text-white p-3" style="height: 30rem;">
+              <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container" style="height:100%;width:100%">
+  <div class="tradingview-widget-container__widget" style="height:calc(100% - 32px);width:100%"></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+  {
+  "autosize": true,
+  "symbol": "BITSTAMP:BTCUSD",
+  "interval": "1",
+  "timezone": "Etc/UTC",
+  "theme": "light",
+  "style": "1",
+  "locale": "en",
+  "allow_symbol_change": true,
+  "calendar": false,
+  "support_host": "https://www.tradingview.com"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+            </div>
+            <div class="col-md-5 m-auto ms-1 text-white p-3" style="height: 30rem;">
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+  {
+  "colorTheme": "light",
+  "dateRange": "12M",
+  "showChart": true,
+  "locale": "en",
+  "width": "100%",
+  "height": "100%",
+  "largeChartUrl": "",
+  "isTransparent": false,
+  "showSymbolLogo": true,
+  "showFloatingTooltip": false,
+  "plotLineColorGrowing": "rgba(41, 98, 255, 1)",
+  "plotLineColorFalling": "rgba(41, 98, 255, 1)",
+  "gridLineColor": "rgba(240, 243, 250, 0)",
+  "scaleFontColor": "rgba(19, 23, 34, 1)",
+  "belowLineFillColorGrowing": "rgba(41, 98, 255, 0.12)",
+  "belowLineFillColorFalling": "rgba(41, 98, 255, 0.12)",
+  "belowLineFillColorGrowingBottom": "rgba(41, 98, 255, 0)",
+  "belowLineFillColorFallingBottom": "rgba(41, 98, 255, 0)",
+  "symbolActiveColor": "rgba(41, 98, 255, 0.12)",
+  "tabs": [
+    {
+      "title": "Indices",
+      "symbols": [
+        {
+          "s": "FOREXCOM:SPXUSD",
+          "d": "S&P 500 Index"
+        },
+        {
+          "s": "FOREXCOM:NSXUSD",
+          "d": "US 100 Cash CFD"
+        },
+        {
+          "s": "FOREXCOM:DJI",
+          "d": "Dow Jones Industrial Average Index"
+        },
+        {
+          "s": "INDEX:NKY",
+          "d": "Nikkei 225"
+        },
+        {
+          "s": "INDEX:DEU40",
+          "d": "DAX Index"
+        },
+        {
+          "s": "FOREXCOM:UKXGBP",
+          "d": "FTSE 100 Index"
+        }
+      ],
+      "originalTitle": "Indices"
+    },
+    {
+      "title": "Futures",
+      "symbols": [
+        {
+          "s": "CME_MINI:ES1!",
+          "d": "S&P 500"
+        },
+        {
+          "s": "CME:6E1!",
+          "d": "Euro"
+        },
+        {
+          "s": "COMEX:GC1!",
+          "d": "Gold"
+        },
+        {
+          "s": "NYMEX:CL1!",
+          "d": "WTI Crude Oil"
+        },
+        {
+          "s": "NYMEX:NG1!",
+          "d": "Gas"
+        },
+        {
+          "s": "CBOT:ZC1!",
+          "d": "Corn"
+        }
+      ],
+      "originalTitle": "Futures"
+    },
+    {
+      "title": "Bonds",
+      "symbols": [
+        {
+          "s": "CBOT:ZB1!",
+          "d": "T-Bond"
+        },
+        {
+          "s": "CBOT:UB1!",
+          "d": "Ultra T-Bond"
+        },
+        {
+          "s": "EUREX:FGBL1!",
+          "d": "Euro Bund"
+        },
+        {
+          "s": "EUREX:FBTP1!",
+          "d": "Euro BTP"
+        },
+        {
+          "s": "EUREX:FGBM1!",
+          "d": "Euro BOBL"
+        }
+      ],
+      "originalTitle": "Bonds"
+    },
+    {
+      "title": "Forex",
+      "symbols": [
+        {
+          "s": "FX:EURUSD",
+          "d": "EUR to USD"
+        },
+        {
+          "s": "FX:GBPUSD",
+          "d": "GBP to USD"
+        },
+        {
+          "s": "FX:USDJPY",
+          "d": "USD to JPY"
+        },
+        {
+          "s": "FX:USDCHF",
+          "d": "USD to CHF"
+        },
+        {
+          "s": "FX:AUDUSD",
+          "d": "AUD to USD"
+        },
+        {
+          "s": "FX:USDCAD",
+          "d": "USD to CAD"
+        }
+      ],
+      "originalTitle": "Forex"
+    }
+  ]
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <!-- <script src="node_modules/@popperjs/core/dist/umd/popper.js"></script> -->
+  </body>
+</html>
